@@ -47,28 +47,28 @@ int _isalp(int c)
 
 int _atoi(char *s)
 {
-	int i, sign = 1, flag = 0, output;
-	unsigned int result = 0;
+	int i, sgn = 1, flg = 0, outp;
+	unsigned int res = 0;
 
-	for (i = 0;  s[i] != '\0' && flag != 2; i++)
+	for (i = 0;  s[i] != '\0' && flg != 2; i++)
 	{
 		if (s[i] == '-')
-			sign *= -1;
+			sgn *= -1;
 
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			flag = 1;
-			result *= 10;
-			result += (s[i] - '0');
+			flg = 1;
+			res *= 10;
+			res += (s[i] - '0');
 		}
-		else if (flag == 1)
-			flag = 2;
+		else if (flg == 1)
+			flg = 2;
 	}
 
-	if (sign == -1)
-		output = -result;
+	if (sgn == -1)
+		outp = -res;
 	else
-		output = result;
+		outp = res;
 
-	return (output);
+	return (outp);
 }
